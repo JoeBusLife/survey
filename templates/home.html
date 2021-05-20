@@ -4,7 +4,12 @@
 {% block content %}
 <h1>{{survey_title}}</h1>
 <p>{{survey_instructions}}</p>
-<form action="/questions/{{next_q_id}}" id="survey-form">
+<form action="/start" method="POST" id="survey-start">
 	<button>Start!</button>
 </form>
+{% if continue_btn %}
+<form action="/questions/{{next_q_id}}" id="survey-continue">
+	<button>Continue</button>
+</form>
+{% endif %}
 {% endblock %}
